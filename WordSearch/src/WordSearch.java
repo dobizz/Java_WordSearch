@@ -1,8 +1,9 @@
-    import java.util.*;
+    import java.io.FileReader;
+import java.util.*;
      
     class WordSearch{
      
-    	public static Scanner console = new Scanner(System.in);
+    	
      
     	public static int findAll(char[][] grid, String word){
     		int count = 0;
@@ -145,8 +146,11 @@
     	}
      
     	public static void main (String[] args) throws java.lang.Exception{
+    		
+    		String fileName = "input.in";
+    		Scanner inFile = new Scanner(new FileReader(fileName));
      
-    		int cases = console.nextInt();
+    		int cases = inFile.nextInt();
      
     		int n;
     		int m;
@@ -157,23 +161,23 @@
     		//char[][] grid = new char[5][5];
      
     		for(int c = 0; c < cases; c++){
-    			n = console.nextInt();
-    			m = console.nextInt();
+    			n = inFile.nextInt();
+    			m = inFile.nextInt();
     			char[][] grid = new char[n][m];
     			char[] tempChar = new char[m];
      
     			for(int i=0; i < n; i++){
-    				temp=console.next();
+    				temp=inFile.next();
     				tempChar = temp.toCharArray();
     				for(int j=0; j < m; j++){
     					grid[i][j] = tempChar[j];
     				}
     			}
      
-    			word = console.next();
+    			word = inFile.next();
     			System.out.println("Case " + (c+1) + ": "  +findAll(grid,word));
      
     		}//case loop
-     
+    		inFile.close();
     	}//main
     }//class
