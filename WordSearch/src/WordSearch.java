@@ -147,7 +147,7 @@ import java.util.*;
      
     	public static void main (String[] args) throws java.lang.Exception{
     		
-    		String fileName = "input.in";
+    		String fileName = "input";
     		Scanner inFile = new Scanner(new FileReader(fileName));
      
     		int cases = inFile.nextInt();
